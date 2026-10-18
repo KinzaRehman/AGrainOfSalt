@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Grain of Salt: log in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="auth">
+    <div class="auth-box">
+      <h1 class="wordmark">A Grain of Salt</h1>
+      <p class="tagline">Pick a challenge. Check in daily. Your community keeps you honest.</p>
+
+      <nav class="tabs" aria-label="Account">
+        <a class="tab" href="#login">Log in</a>
+        <a class="tab" href="#signup">Create account</a>
+      </nav>
+
+      <div class="panels card">
+
+        <!-- Log in -->
+        <section id="login" class="panel">
+          <form action="challenges.html">
+            <div class="field">
+              <label for="login-user">Username or email</label>
+              <input type="text" id="login-user" name="user" autocomplete="username" required>
+            </div>
+            <div class="field">
+              <label for="login-pass">Password</label>
+              <input type="password" id="login-pass" name="password" autocomplete="current-password" required>
+            </div>
+            <button class="btn btn-block" type="submit">Log in</button>
+          </form>
+          <div class="form-links">
+            <a href="#forgot-password">Forgot password?</a>
+            <a href="#forgot-username">Forgot username?</a>
+          </div>
+        </section>
+
+        <!-- Create account -->
+        <section id="signup" class="panel">
+          <form action="questionnaire.html">
+            <div class="field">
+              <label for="su-user">Username</label>
+              <input type="text" id="su-user" name="username" autocomplete="username" required>
+            </div>
+            <div class="field">
+              <label for="su-email">Email</label>
+              <input type="email" id="su-email" name="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="su-pass">Password <span class="hint">At least 8 characters</span></label>
+              <input type="password" id="su-pass" name="password" minlength="8" autocomplete="new-password" required>
+            </div>
+            <div class="field">
+              <label for="su-pass2">Confirm password</label>
+              <input type="password" id="su-pass2" name="password2" minlength="8" autocomplete="new-password" required>
+            </div>
+            <button class="btn btn-block" type="submit">Create account</button>
+          </form>
+          <p class="form-links"><a href="#login">I already have an account</a></p>
+        </section>
+
+        <!-- Forgot / reset password -->
+        <section id="forgot-password" class="panel">
+          <h2>Reset your password</h2>
+          <p class="muted">Enter your email and we'll send you a link to choose a new password.</p>
+          <form action="#login">
+            <div class="field">
+              <label for="fp-email">Email</label>
+              <input type="email" id="fp-email" name="email" autocomplete="email" required>
+            </div>
+            <button class="btn btn-block" type="submit">Send reset link</button>
+          </form>
+          <p class="form-links"><a href="#login">Back to log in</a></p>
+        </section>
+
+        <!-- Forgot username -->
+        <section id="forgot-username" class="panel">
+          <h2>Find your username</h2>
+          <p class="muted">Enter the email you signed up with and we'll send your username.</p>
+          <form action="#login">
+            <div class="field">
+              <label for="fu-email">Email</label>
+              <input type="email" id="fu-email" name="email" autocomplete="email" required>
+            </div>
+            <button class="btn btn-block" type="submit">Email my username</button>
+          </form>
+          <p class="form-links"><a href="#login">Back to log in</a></p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>

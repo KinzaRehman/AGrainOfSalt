@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Grain of Salt: about you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell" style="max-width: 680px;">
+    <header class="page-head">
+      <h1>Tell us about you</h1>
+      <p>Ten quick questions so we can suggest the right challenge. You only do this once.</p>
+    </header>
+
+    <form action="challenges.html">
+
+      <div class="question">
+        <label for="q1">What should we call you?</label>
+        <input type="text" id="q1" name="display_name" required>
+      </div>
+
+      <div class="question">
+        <label for="q2">What's a goal you've been putting off?</label>
+        <textarea id="q2" name="goal"></textarea>
+      </div>
+
+      <fieldset class="question">
+        <legend>Which part of life is this goal in?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="area" value="health" required> Health and fitness</label>
+          <label class="choice"><input type="radio" name="area" value="money"> Money</label>
+          <label class="choice"><input type="radio" name="area" value="career"> Career or learning</label>
+          <label class="choice"><input type="radio" name="area" value="relationships"> Relationships</label>
+          <label class="choice"><input type="radio" name="area" value="creative"> Creativity</label>
+          <label class="choice"><input type="radio" name="area" value="other"> Something else</label>
+        </div>
+      </fieldset>
+
+      <div class="question">
+        <label for="q4">How many days a week can you realistically show up?</label>
+        <select id="q4" name="days_per_week">
+          <option value="">Choose one</option>
+          <option>1 day</option>
+          <option>2 days</option>
+          <option>3 days</option>
+          <option>4 days</option>
+          <option>5 days</option>
+          <option>6 days</option>
+          <option>Every day</option>
+        </select>
+      </div>
+
+      <div class="question">
+        <label for="q5">How motivated do you feel right now?</label>
+        <input type="range" id="q5" name="motivation" min="1" max="10" value="5">
+        <div class="range-ends"><span>Barely</span><span>Fired up</span></div>
+      </div>
+
+      <fieldset class="question">
+        <legend>What usually derails you? Pick all that apply.</legend>
+        <div class="choices">
+          <label class="choice"><input type="checkbox" name="derail" value="busy"> A busy schedule</label>
+          <label class="choice"><input type="checkbox" name="derail" value="interest"> Losing interest</label>
+          <label class="choice"><input type="checkbox" name="derail" value="perfection"> Wanting it to be perfect</label>
+          <label class="choice"><input type="checkbox" name="derail" value="stress"> Stress</label>
+          <label class="choice"><input type="checkbox" name="derail" value="forget"> Forgetting</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="question">
+        <legend>How do you like to be nudged?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="nudge" value="gentle" required> Gentle encouragement</label>
+          <label class="choice"><input type="radio" name="nudge" value="direct"> Straight talk</label>
+          <label class="choice"><input type="radio" name="nudge" value="competitive"> Friendly competition</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="question">
+        <legend>When do you want to check in?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="checkin_time" value="morning" required> Morning</label>
+          <label class="choice"><input type="radio" name="checkin_time" value="afternoon"> Afternoon</label>
+          <label class="choice"><input type="radio" name="checkin_time" value="evening"> Evening</label>
+        </div>
+      </fieldset>
+
+      <div class="question">
+        <label for="q9">Have you stuck with a challenge before? What helped?</label>
+        <textarea id="q9" name="past_experience"></textarea>
+      </div>
+
+      <div class="question">
+        <label for="q10">Who can see your progress?</label>
+        <select id="q10" name="visibility">
+          <option value="everyone">Everyone</option>
+          <option value="challenge">Only people in my challenge</option>
+          <option value="me">Just me</option>
+        </select>
+      </div>
+
+      <button class="btn" type="submit">Save and pick my challenge</button>
+    </form>
+  </main>
+</body>
+</html>

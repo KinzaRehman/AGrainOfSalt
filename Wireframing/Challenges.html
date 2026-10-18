@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Grain of Salt: pick a challenge</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="dashboard.html">A Grain of Salt</a>
+      <ul>
+        <li><a href="challenges.html" aria-current="page">Challenges</a></li>
+        <li><a href="dashboard.html">My stats</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="inbox.html">Inbox</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="shell">
+    <header class="page-head">
+      <h1>Pick your challenge</h1>
+      <p>Choose one to start. You can switch later, but your streak starts over.</p>
+    </header>
+
+    <form action="dashboard.html">
+      <div class="grid">
+
+        <label class="challenge">
+          <span class="challenge-top">
+            <input type="radio" name="challenge" value="walk" required>
+            <h3>Walk every day</h3>
+          </span>
+          <p>30 minutes outside, rain or shine.</p>
+          <span class="meta">30 days · 214 people</span>
+        </label>
+
+        <label class="challenge">
+          <span class="challenge-top">
+            <input type="radio" name="challenge" value="no-spend">
+            <h3>No-spend month</h3>
+          </span>
+          <p>Bills and groceries only. Log every urge you skip.</p>
+          <span class="meta">30 days · 156 people</span>
+        </label>
+
+        <label class="challenge">
+          <span class="challenge-top">
+            <input type="radio" name="challenge" value="read">
+            <h3>Read 20 pages</h3>
+          </span>
+          <p>Any book, every day. Finish what you start.</p>
+          <span class="meta">21 days · 98 people</span>
+        </label>
+
+        <label class="challenge">
+          <span class="challenge-top">
+            <input type="radio" name="challenge" value="code">
+            <h3>Code daily</h3>
+          </span>
+          <p>At least one commit or one solved problem a day.</p>
+          <span class="meta">60 days · 187 people</span>
+        </label>
+
+        <label class="challenge">
+          <span class="challenge-top">
+            <input type="radio" name="challenge" value="sleep">
+            <h3>Lights out by 11</h3>
+          </span>
+          <p>Screens off, phone across the room.</p>
+          <span class="meta">14 days · 121 people</span>
+        </label>
+
+        <label class="challenge">
+          <span class="challenge-top">
+            <input type="radio" name="challenge" value="custom">
+            <h3>Make your own</h3>
+          </span>
+          <p>Set your own goal, length and daily check-in.</p>
+          <span class="meta">You decide</span>
+        </label>
+
+      </div>
+
+      <button class="btn" type="submit">Start this challenge</button>
+    </form>
+  </main>
+</body>
+</html>

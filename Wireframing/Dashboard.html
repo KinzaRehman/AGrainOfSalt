@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Grain of Salt: my stats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="dashboard.html">A Grain of Salt</a>
+      <ul>
+        <li><a href="challenges.html">Challenges</a></li>
+        <li><a href="dashboard.html" aria-current="page">My stats</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="inbox.html">Inbox</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="shell">
+    <header class="page-head">
+      <h1>Walk every day</h1>
+      <p>Day 12 of 30. Keep going, you're ahead of most of the group.</p>
+    </header>
+
+    <section class="stats" aria-label="Your stats">
+      <div class="stat">
+        <div class="stat-value">9 days</div>
+        <div class="stat-label">Current streak</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">11 of 12</div>
+        <div class="stat-label">Check-ins so far</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">340</div>
+        <div class="stat-label">Points</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">#4</div>
+        <div class="stat-label">Leaderboard rank</div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-bottom: 1.5rem;" aria-label="Challenge progress">
+      <h2>Challenge progress</h2>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" aria-label="Challenge progress">
+        <div class="bar-fill" style="width: 40%;"></div>
+      </div>
+      <p class="muted small" style="margin: 0;">40% complete. 18 days left.</p>
+    </section>
+
+    <div class="two-col">
+
+      <!-- Update area -->
+      <section class="card" aria-label="Today's check-in">
+        <h2>Today's check-in</h2>
+        <form action="dashboard.html">
+          <fieldset>
+            <legend>How did it go?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="result" value="done" checked> I did it</label>
+              <label class="choice"><input type="radio" name="result" value="partial"> I did part of it</label>
+              <label class="choice"><input type="radio" name="result" value="missed"> I missed today</label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="minutes">Minutes walked</label>
+            <input type="number" id="minutes" name="minutes" min="0" value="30">
+          </div>
+          <div class="field">
+            <label for="note">Note <span class="hint">Optional. Others in your challenge can see it.</span></label>
+            <textarea id="note" name="note"></textarea>
+          </div>
+          <button class="btn" type="submit">Save check-in</button>
+        </form>
+        <p class="small" style="margin: 1rem 0 0;"><a href="challenges.html">Change challenge</a></p>
+      </section>
+
+      <!-- Recent check-ins -->
+      <section class="card" aria-label="Recent check-ins">
+        <h2>Recent check-ins</h2>
+        <ul class="log">
+          <li><span>Yesterday</span><span class="muted">30 min</span></li>
+          <li><span>Friday</span><span class="muted">45 min</span></li>
+          <li><span>Thursday</span><span class="muted">30 min</span></li>
+          <li><span>Wednesday</span><span class="muted">Missed</span></li>
+          <li><span>Tuesday</span><span class="muted">35 min</span></li>
+        </ul>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>

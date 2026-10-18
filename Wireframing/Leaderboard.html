@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Grain of Salt: leaderboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="dashboard.html">A Grain of Salt</a>
+      <ul>
+        <li><a href="challenges.html">Challenges</a></li>
+        <li><a href="dashboard.html">My stats</a></li>
+        <li><a href="leaderboard.html" aria-current="page">Leaderboard</a></li>
+        <li><a href="inbox.html">Inbox</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="shell">
+    <header class="page-head">
+      <h1>Leaderboard</h1>
+      <p>Points come from daily check-ins and streaks. Everyone starts fresh each challenge.</p>
+    </header>
+
+    <form class="toolbar" action="leaderboard.html">
+      <label for="range">Show</label>
+      <select id="range" name="range">
+        <option>This week</option>
+        <option>This month</option>
+        <option>All time</option>
+      </select>
+      <label for="which">for</label>
+      <select id="which" name="which">
+        <option>My challenge</option>
+        <option>All challenges</option>
+      </select>
+      <button class="btn btn-quiet" type="submit">Update</button>
+    </form>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Name</th>
+            <th scope="col">Challenge</th>
+            <th scope="col">Streak</th>
+            <th scope="col">Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="top"><td class="rank">1</td><td>Maya R.</td><td>Walk every day</td><td>12 days</td><td>455</td></tr>
+          <tr class="top"><td class="rank">2</td><td>Devon L.</td><td>Walk every day</td><td>12 days</td><td>430</td></tr>
+          <tr class="top"><td class="rank">3</td><td>Priya S.</td><td>Walk every day</td><td>10 days</td><td>385</td></tr>
+          <tr class="you"><td class="rank">4</td><td>You</td><td>Walk every day</td><td>9 days</td><td>340</td></tr>
+          <tr><td class="rank">5</td><td>Tomás V.</td><td>Walk every day</td><td>7 days</td><td>310</td></tr>
+          <tr><td class="rank">6</td><td>Jess K.</td><td>Walk every day</td><td>6 days</td><td>275</td></tr>
+          <tr><td class="rank">7</td><td>Amir H.</td><td>Walk every day</td><td>4 days</td><td>240</td></tr>
+          <tr><td class="rank">8</td><td>Lena W.</td><td>Walk every day</td><td>3 days</td><td>205</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>
