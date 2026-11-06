@@ -1,158 +1,134 @@
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@500;600;700&display=swap');
-
-:root {
-  --bg: #102d31;
-  --card: #1c4145;
-  --text: #f5ede0;
-  --accent: #e99b89;
-  --border: #3c5d5e;
-
-  font-family: 'DM Sans', sans-serif;
-  color: var(--text);
-  background: var(--bg);
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/* Main stylesheet for the React app. Uses basic layouts and standard browser controls. */
+/* Basic page font and colors. */
 body {
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: #fff;
 }
 
-#root {
-  min-height: 100vh;
-  width: 100%;
+a {
+  color: #245b60;
 }
 
-button,
-input {
+/* Shared spacing for the header and footer. */
+.site-header,
+.site-footer {
+  padding: 20px;
+  background: #eee;
+}
+
+.site-header {
+  border-bottom: 1px solid #ccc;
+}
+
+.site-brand {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Keep account forms narrow enough to read, with space on each side. */
+.auth {
+  max-width: 360px;
+  margin: 30px auto;
+}
+
+h1 {
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+/* Stack labels, inputs, and the submit button vertically. */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+button {
+  padding: 8px;
   font: inherit;
 }
 
-.auth {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-  background:
-    radial-gradient(
-      circle at 15% 20%,
-      #214a4b 0%,
-      transparent 40%
-    ),
-    var(--bg);
-}
-
-.auth h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(32px, 5vw, 48px);
-  font-weight: 600;
-  color: var(--text);
-  text-align: center;
-  margin: 0 0 32px;
-}
-
-.auth h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 26px;
-  font-weight: 500;
-  color: var(--text);
-  text-align: center;
-  margin: 0 0 24px;
-}
-
-.auth form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-
-  width: 100%;
-  max-width: 420px;
-  padding: 36px;
-
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-.auth label {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.auth input {
-  width: 100%;
-  padding: 13px 14px;
-  margin-bottom: 8px;
-  border: 1px solid #a8b5ad;
-  border-radius: 4px;
-  background: var(--text);
-  color: var(--bg);
-}
-
-.auth input:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.auth button {
-  margin-top: 12px;
-  padding: 14px;
-  background: var(--accent);
-  color: var(--bg);
-  border: none;
-  border-radius: 4px;
-  font-weight: 700;
+button {
   cursor: pointer;
-  transition: background 0.2s ease;
 }
 
-.auth button:hover {
-  background: #f5b3a2;
+button:disabled {
+  cursor: wait;
 }
 
-.auth button:focus-visible {
-  outline: 3px solid var(--text);
-  outline-offset: 3px;
+/* Make error messages stand out. */
+[role='alert'] {
+  color: #a00000;
 }
 
-.auth > p {
-  margin-top: 24px;
-  font-size: 14px;
-  color: #d2dcd4;
-  text-align: center;
-}
-
-.auth a {
-  color: #f5b3a2;
-  font-weight: 600;
-  text-underline-offset: 3px;
-}
-
-.auth a:hover {
-  color: #fff0e6;
-}
-
-.auth [role="alert"] {
-  color: #ffd5ca;
+.site-footer {
+  margin-top: 40px;
+  border-top: 1px solid #ccc;
   font-size: 14px;
 }
 
-@media (max-width: 480px) {
-  .auth form {
-    padding: 24px;
-  }
+.site-footer small {
+  display: block;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .auth button {
-    transition: none;
-  }
+/* Hide the keyboard shortcut until it receives focus. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
 }
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  padding: 8px;
+  background: white;
+}
+
+/* Empty outlines for the five member views. */
+.member-layout {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.member-nav {
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #ccc;
+}
+.member-nav a[aria-current='page'] {
+  font-weight: bold;
+  text-underline-offset: 4px;
+}
+.member-nav button { margin-left: auto; }
+.page-outline { padding: 24px 0; }
+.outline-sections { display: grid; gap: 16px; }
+.outline-region {
+  min-height: 130px;
+  border: 1px dashed #aaa;
+  padding: 18px;
+}
+.outline-region h2 {
+  font-size: 16px;
+  font-weight: normal;
+  color: #555;
+  margin: 0;
+}
+.outline-next { display: inline-block; margin-top: 24px; }

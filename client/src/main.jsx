@@ -1,3 +1,4 @@
+// Starts React inside index.html. BrowserRouter lets pages change without reloading the whole website.
 
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';

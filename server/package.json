@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "node --test",
+    "reset-link": "node scripts/requestResetLink.js",
+    "migrate:users": "node scripts/migrateLegacyUsers.js"
   },
   "keywords": [],
   "author": "",

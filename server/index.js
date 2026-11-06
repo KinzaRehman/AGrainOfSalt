@@ -1,3 +1,4 @@
+// Starts Express, enables JSON requests and cookies, and waits for MongoDB before accepting connections.
 require('dotenv').config();
 
 const express = require('express');
@@ -14,6 +15,7 @@ app.use(cors({
   credentials: true
 }));
 
+// Parse JSON form data into req.body and cookies into req.cookies.
 app.use(express.json());
 app.use(cookieParser());
 

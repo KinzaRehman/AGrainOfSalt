@@ -1,3 +1,4 @@
+// Opens the MongoDB connection using MONGO_URI from the server environment.
 const mongoose = require('mongoose');
 
 function connectDB() {

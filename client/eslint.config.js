@@ -1,3 +1,4 @@
+// Defines the JavaScript and React checks used by npm run lint. Generated build files are ignored.
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
