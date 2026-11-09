@@ -1,25 +1,35 @@
 /* Main stylesheet for the React app. Uses basic layouts and standard browser controls. */
+/* Shared website palette. */
+:root {
+  color-scheme: light;
+  --slate: #494d5f;
+  --purple: #8458B3;
+  --lavender: #D0BDF4;
+  --ice: #E5EAF5;
+  --sky: #A0D2EB;
+}
+
 /* Basic page font and colors. */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: #222;
-  background: #fff;
+  color: var(--slate);
+  background: var(--ice);
 }
 
 a {
-  color: #245b60;
+  color: var(--purple);
 }
 
 /* Shared spacing for the header and footer. */
 .site-header,
 .site-footer {
   padding: 20px;
-  background: #eee;
+  background: var(--sky);
 }
 
 .site-header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--lavender);
 }
 
 .site-brand {
@@ -65,8 +75,36 @@ button {
   font: inherit;
 }
 
+input {
+  color: var(--slate);
+  background: var(--ice);
+  border: 1px solid var(--slate);
+}
+
+input::placeholder {
+  color: var(--slate);
+  opacity: 1;
+}
+
 button {
+  color: var(--ice);
+  background: var(--purple);
+  border: 1px solid var(--purple);
   cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  color: var(--slate);
+  background: var(--lavender);
+}
+
+a:hover {
+  color: var(--slate);
+}
+
+:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 3px;
 }
 
 button:disabled {
@@ -80,7 +118,7 @@ button:disabled {
 
 .site-footer {
   margin-top: 40px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--lavender);
   font-size: 14px;
 }
 
@@ -99,7 +137,7 @@ button:disabled {
   left: 10px;
   top: 10px;
   padding: 8px;
-  background: white;
+  background: var(--ice);
 }
 
 /* Empty outlines for the five member views. */
@@ -111,9 +149,11 @@ button:disabled {
 .member-nav {
   align-items: center;
   padding: 16px 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--lavender);
 }
 .member-nav a[aria-current='page'] {
+  color: var(--slate);
+  background: var(--lavender);
   font-weight: bold;
   text-underline-offset: 4px;
 }
@@ -122,13 +162,13 @@ button:disabled {
 .outline-sections { display: grid; gap: 16px; }
 .outline-region {
   min-height: 130px;
-  border: 1px dashed #aaa;
+  border: 1px dashed var(--purple);
   padding: 18px;
 }
 .outline-region h2 {
   font-size: 16px;
   font-weight: normal;
-  color: #555;
+  color: var(--slate);
   margin: 0;
 }
 .outline-next { display: inline-block; margin-top: 24px; }
