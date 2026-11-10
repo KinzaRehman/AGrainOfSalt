@@ -6,6 +6,7 @@ import ResetPassword from './pages/ResetPassword';
 
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import Landing from './pages/Landing';
 import Dashboard from './pages/Dashboard';
 import Questionnaire from './pages/Questionnaire';
 import Challenges from './pages/Challenges';
@@ -24,7 +25,7 @@ function App() {
       <div id="main-content" className="site-content" tabIndex={-1}>
     {/* These routes can be opened without an existing login. */}
     <Routes>
-      <Route path="/" element={<Navigate to="/login" replace />} />
+      <Route path="/" element={<Landing />} />
 
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
