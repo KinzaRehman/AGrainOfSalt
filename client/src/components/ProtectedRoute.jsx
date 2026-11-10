@@ -15,10 +15,12 @@ function ProtectedRoute() {
       .catch(() => setStatus('unauthenticated'));
   }, []);
 
+  // Wait for the session response so member content is not shown before the check finishes.
   if (status === 'loading') {
     return <p>Loading...</p>;
   }
 
+  // Replace this history entry so Back does not keep returning to the rejected route.
   if (status === 'unauthenticated') {
     return <Navigate to="/login" replace />;
   }

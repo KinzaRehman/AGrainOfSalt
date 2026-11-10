@@ -13,6 +13,7 @@ export default function ResetPassword() {
   const [pending, setPending] = useState(false);
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
+  // Reject malformed links here. The server still checks whether the token exists and has expired.
   const validToken = /^[a-f0-9]{64}$/.test(token);
 
   

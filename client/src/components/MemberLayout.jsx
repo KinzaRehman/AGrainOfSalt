@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { logoutUser } from '../api/authApi';
 
-// Navigation shared by the five signed-in page outlines.
+// Keeps member navigation in one place so each signed-in page only needs its own content.
 export default function MemberLayout() {
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const [pending, setPending] = useState(false);
 
+  // Wait for the server to clear the session before leaving the member area.
   async function handleLogout() {
     setError('');
     setPending(true);
@@ -36,6 +37,7 @@ export default function MemberLayout() {
         <button onClick={handleLogout} disabled={pending}>{pending ? 'Logging out…' : 'Log out'}</button>
       </nav>
       {error && <p role="alert">{error}</p>}
+      {/* React Router puts the selected member page here, below the shared navigation. */}
       <Outlet />
     </div>
   );

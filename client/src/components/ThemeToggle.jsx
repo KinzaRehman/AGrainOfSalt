@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 // and index.html applies it before React loads so the page never flashes the wrong theme.
 const STORAGE_KEY = 'grain-theme';
 
+// Read the theme already applied by index.html so the switch starts in the right position.
 function readTheme() {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
 }
@@ -16,6 +17,7 @@ export default function ThemeToggle() {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
+  // Update the page now and remember the choice for the next visit.
   function handleToggle() {
     const next = theme === 'dark' ? 'light' : 'dark';
     setTheme(next);
@@ -26,6 +28,7 @@ export default function ThemeToggle() {
     }
   }
 
+  // Switch semantics let screen readers announce whether dark mode is on or off.
   return (
     <button
       type="button"

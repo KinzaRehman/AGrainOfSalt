@@ -1,5 +1,7 @@
+// Introduces the app before someone signs up. It explains the planned features and makes clear what is still being built.
 import { Link } from 'react-router-dom';
 
+// Keeping these steps together makes the explanation and order easy to update.
 const steps = [
   { title: 'Find your reason', description: 'Decide what you want to work on and why you want to do it.' },
   { title: 'Pick a challenge', description: 'Choose a challenge that fits your goal and follow your progress.' },
@@ -39,6 +41,7 @@ export default function Landing() {
         </ol>
       </section>
 
+      {/* Set expectations before signup because the member features are still placeholders. */}
       <section className="landing-expectations landing-section" aria-labelledby="expect-title">
         <div>
           <p className="landing-eyebrow">Before you join</p>
@@ -48,8 +51,7 @@ export default function Landing() {
         <div className="landing-expectation-details">
           <h3>What we’re building</h3>
           <p>Challenge selection, progress stats, a community leaderboard, and an inbox for the “grains of salt” that help keep you motivated.</p>
-          <h3>Still in development</h3>
-          <p>You can sign up and log in now. The questionnaire, challenges, progress tracking, leaderboard, and inbox are not ready to use yet.</p>
+
         </div>
       </section>
 

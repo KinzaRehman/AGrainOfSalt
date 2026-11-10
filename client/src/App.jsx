@@ -20,6 +20,7 @@ import Footer from './pages/main/footer';
 function App() {
   return (
     <div className="site-layout">
+      {/* Keyboard users can skip the repeated header and jump to the page content. */}
       <a className="skip-link" href="#main-content">Skip to content</a>
       <Header />
       <div id="main-content" className="site-content" tabIndex={-1}>
@@ -34,7 +35,7 @@ function App() {
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/reset" element={<Navigate to="/forgot-password" replace />} />
 
-      {/* All five member views require a valid session. */}
+      {/* ProtectedRoute checks the session. MemberLayout adds the navigation shared by its child pages. */}
       <Route element={<ProtectedRoute />}>
         <Route element={<MemberLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />

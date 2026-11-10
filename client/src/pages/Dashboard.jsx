@@ -1,3 +1,4 @@
+// Shows the planned challenge summary and progress sections. PageOutline keeps the layout consistent until real stats are connected.
 import PageOutline from '../components/PageOutline';
 
 export default function Dashboard() {
