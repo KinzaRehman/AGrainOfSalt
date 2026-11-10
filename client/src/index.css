@@ -1,35 +1,102 @@
 /* Main stylesheet for the React app. Uses basic layouts and standard browser controls. */
-/* Shared website palette. */
+/* Shared website palette. Light colors are the default; data-theme="dark" on <html> swaps them. */
 :root {
   color-scheme: light;
-  --slate: #494d5f;
-  --purple: #8458B3;
-  --lavender: #D0BDF4;
-  --ice: #E5EAF5;
-  --sky: #A0D2EB;
+
+  /* Brand colors. */
+  --black: #142030;
+  --whale: #1E3442;
+  --eggplant: #732553;
+  --strawberry: #FF5C8D;
+  --tan: #E9D8C8;
+  --grauzone: #85A3B2;
+
+  /* Light theme roles. */
+  --bg: var(--tan);
+  --surface: #F5ECE2;
+  --text: var(--black);
+  --muted: #4B5C69;
+  --border: rgba(20, 32, 48, 0.25);
+  --input-border: #4B5C69;
+  --link: var(--eggplant);
+  --link-hover: var(--black);
+  --btn-bg: var(--eggplant);
+  --btn-fg: var(--tan);
+  --btn-hover-bg: var(--black);
+  --btn-hover-fg: var(--tan);
+  --chrome-bg: var(--grauzone);
+  --chrome-fg: var(--black);
+  --chrome-link: var(--black);
+  --current-bg: var(--grauzone);
+  --current-fg: var(--black);
+  --danger: #a00000;
+  --focus: var(--eggplant);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: var(--black);
+  --surface: var(--whale);
+  --text: var(--tan);
+  --muted: #9DB4C1;
+  --border: rgba(133, 163, 178, 0.35);
+  --input-border: var(--grauzone);
+  --link: var(--strawberry);
+  --link-hover: var(--tan);
+  --btn-bg: var(--strawberry);
+  --btn-fg: var(--black);
+  --btn-hover-bg: var(--tan);
+  --btn-hover-fg: var(--black);
+  --chrome-bg: var(--whale);
+  --chrome-fg: var(--tan);
+  --chrome-link: var(--strawberry);
+  --current-bg: var(--eggplant);
+  --current-fg: var(--tan);
+  --danger: #ffb4b4;
+  --focus: var(--strawberry);
 }
 
 /* Basic page font and colors. */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: var(--slate);
-  background: var(--ice);
+  color: var(--text);
+  background: var(--bg);
 }
 
 a {
-  color: var(--purple);
+  color: var(--link);
 }
 
 /* Shared spacing for the header and footer. */
 .site-header,
 .site-footer {
   padding: 20px;
-  background: var(--sky);
+  color: var(--chrome-fg);
+  background: var(--chrome-bg);
+}
+
+.site-header a,
+.site-footer a {
+  color: var(--chrome-link);
+}
+
+.site-header a:hover,
+.site-footer a:hover {
+  color: var(--chrome-fg);
 }
 
 .site-header {
-  border-bottom: 1px solid var(--lavender);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .site-brand {
@@ -42,6 +109,20 @@ nav {
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 12px;
+}
+
+/* Sign up looks like a button so it stands out from the plain Log in link. */
+.site-header .site-signup {
+  padding: 4px 14px;
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.site-header .site-signup:hover {
+  color: var(--btn-hover-fg);
+  background: var(--btn-hover-bg);
 }
 
 main {
@@ -76,34 +157,37 @@ button {
 }
 
 input {
-  color: var(--slate);
-  background: var(--ice);
-  border: 1px solid var(--slate);
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
 }
 
 input::placeholder {
-  color: var(--slate);
+  color: var(--muted);
   opacity: 1;
 }
 
 button {
-  color: var(--ice);
-  background: var(--purple);
-  border: 1px solid var(--purple);
+  color: var(--btn-fg);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-bg);
+  border-radius: 6px;
   cursor: pointer;
 }
 
 button:hover:not(:disabled) {
-  color: var(--slate);
-  background: var(--lavender);
+  color: var(--btn-hover-fg);
+  background: var(--btn-hover-bg);
+  border-color: var(--btn-hover-bg);
 }
 
 a:hover {
-  color: var(--slate);
+  color: var(--link-hover);
 }
 
 :focus-visible {
-  outline: 3px solid var(--purple);
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -113,18 +197,67 @@ button:disabled {
 
 /* Make error messages stand out. */
 [role='alert'] {
-  color: #a00000;
+  color: var(--danger);
 }
 
 .site-footer {
   margin-top: 40px;
-  border-top: 1px solid var(--lavender);
+  border-top: 1px solid var(--border);
   font-size: 14px;
 }
 
 .site-footer small {
   display: block;
   margin-top: 20px;
+}
+
+/* Light/dark switch in the header: a small track with a sliding dot, plus its label. */
+.site-header .theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--chrome-fg);
+  background: transparent;
+  border: 1px solid var(--chrome-fg);
+  border-radius: 999px;
+  padding: 6px 14px 6px 8px;
+}
+
+.site-header .theme-toggle:hover:not(:disabled) {
+  color: var(--chrome-fg);
+  background: transparent;
+  border-color: var(--chrome-link);
+}
+
+.theme-toggle-track {
+  display: inline-flex;
+  align-items: center;
+  width: 36px;
+  height: 20px;
+  padding: 2px;
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.theme-toggle-thumb {
+  width: 14px;
+  height: 14px;
+  background: currentColor;
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+}
+
+.theme-toggle[aria-checked='true'] .theme-toggle-thumb {
+  background: var(--chrome-link);
+  transform: translateX(16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle-thumb {
+    transition: none;
+  }
 }
 
 /* Hide the keyboard shortcut until it receives focus. */
@@ -137,7 +270,8 @@ button:disabled {
   left: 10px;
   top: 10px;
   padding: 8px;
-  background: var(--ice);
+  color: var(--text);
+  background: var(--surface);
 }
 
 /* Empty outlines for the five member views. */
@@ -149,11 +283,11 @@ button:disabled {
 .member-nav {
   align-items: center;
   padding: 16px 0;
-  border-bottom: 1px solid var(--lavender);
+  border-bottom: 1px solid var(--border);
 }
 .member-nav a[aria-current='page'] {
-  color: var(--slate);
-  background: var(--lavender);
+  color: var(--current-fg);
+  background: var(--current-bg);
   font-weight: bold;
   text-underline-offset: 4px;
 }
@@ -162,13 +296,13 @@ button:disabled {
 .outline-sections { display: grid; gap: 16px; }
 .outline-region {
   min-height: 130px;
-  border: 1px dashed var(--purple);
+  border: 1px dashed var(--link);
   padding: 18px;
 }
 .outline-region h2 {
   font-size: 16px;
   font-weight: normal;
-  color: var(--slate);
+  color: var(--text);
   margin: 0;
 }
 .outline-next { display: inline-block; margin-top: 24px; }

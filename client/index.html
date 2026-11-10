@@ -6,6 +6,21 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>A Grain of Salt</title>
+    <!-- Sets the saved (or system) light/dark theme before the page paints, so it never flashes. -->
+    <script>
+      (function () {
+        var theme = 'light';
+        try {
+          var saved = localStorage.getItem('grain-theme');
+          if (saved === 'light' || saved === 'dark') {
+            theme = saved;
+          } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
+          }
+        } catch (e) {}
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
