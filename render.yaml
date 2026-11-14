@@ -1,0 +1,31 @@
+# Free Render deploy for A Grain of Salt - one web service, not two.
+# Why one service: the login cookie is SameSite=Lax, so the React client
+# and the Express API must be on the same domain or login will not stick.
+# In Render: New > Web Service > pick KinzaRehman/AGrainOfSalt,
+# or use this Blueprint. Then set the env vars below in Render.
+# You still need a free MongoDB Atlas cluster for MONGO_URI,
+# and a long random JWT_SECRET. For password-reset email in production,
+# set RESEND_API_KEY and EMAIL_FROM with a verified sender.
+# After the first deploy, set CLIENT_URL to the Render URL
+# (e.g. https://agrainofsalt.onrender.com) and redeploy.
+services:
+  - type: web
+    name: agrainofsalt
+    env: node
+    plan: free
+    buildCommand: npm install --prefix server && npm install --prefix client && npm run build --prefix client
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_URL
+        sync: false
+      - key: RESEND_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
