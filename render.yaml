@@ -8,12 +8,15 @@
 # set RESEND_API_KEY and EMAIL_FROM with a verified sender.
 # After the first deploy, set CLIENT_URL to the Render URL
 # (e.g. https://agrainofsalt.onrender.com) and redeploy.
+# NOTE: --include=dev on the client install is required because
+# NODE_ENV=production makes npm skip devDependencies, and vite (needed
+# to build the client) is a client devDependency.
 services:
   - type: web
     name: agrainofsalt
     env: node
     plan: free
-    buildCommand: npm install --prefix server && npm install --prefix client && npm run build --prefix client
+    buildCommand: npm install --prefix server && npm install --prefix client --include=dev && npm run build --prefix client
     startCommand: node server/index.js
     healthCheckPath: /api/health
     envVars:
