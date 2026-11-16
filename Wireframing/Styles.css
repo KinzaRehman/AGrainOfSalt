@@ -1,7 +1,7 @@
 /* Styles for the static wireframes, separate from the running React app. */
 
-/* A Grain of Salt: shared styles
-   Dark ocean: deep water for surfaces, salt white for text, sea teal and coral for accents. */
+/* Locked In: shared styles
+   Dark ocean: deep water for surfaces, chalk white for text, sea teal and coral for accents. */
 
 :root {
   color-scheme: dark;
@@ -9,7 +9,7 @@
   --deep: #0f2531;         /* nav, cards */
   --tide: #17394a;         /* raised surfaces, hover */
   --current: #2a5266;      /* borders */
-  --salt: #e8f0ee;         /* salt white: text, primary button */
+  --chalk: #e8f0ee;         /* chalk white: text, primary button */
   --mist: #8fadb7;         /* muted text */
   --teal: #4fd1c5;         /* sea teal: focus, selected, progress */
   --teal-soft: rgba(79, 209, 197, .14);
@@ -25,7 +25,7 @@ body {
   min-height: 100vh;
   font-family: "DM Sans", system-ui, sans-serif;
   line-height: 1.55;
-  color: var(--salt);
+  color: var(--chalk);
   /* light near the surface, dark at depth */
   background: linear-gradient(180deg, #123246 0%, var(--deep) 35%, var(--abyss) 100%) fixed;
   background-color: var(--abyss);
@@ -67,11 +67,11 @@ a { color: var(--teal); }
   max-width: 960px; margin: 0 auto; padding: .9rem 1.25rem;
   display: flex; flex-wrap: wrap; align-items: center; gap: .75rem 2rem;
 }
-.brand { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.2rem; color: var(--salt); text-decoration: none; }
+.brand { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.2rem; color: var(--chalk); text-decoration: none; }
 .topnav ul { list-style: none; display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; margin: 0 0 0 auto; padding: 0; }
 .topnav a:not(.brand) { color: var(--mist); text-decoration: none; padding: .25rem 0; border-bottom: 2px solid transparent; }
-.topnav a:not(.brand):hover { color: var(--salt); }
-.topnav a[aria-current="page"] { color: var(--salt); border-bottom-color: var(--teal); }
+.topnav a:not(.brand):hover { color: var(--chalk); }
+.topnav a[aria-current="page"] { color: var(--chalk); border-bottom-color: var(--teal); }
 
 /* ---------- cards ---------- */
 .card {
@@ -91,7 +91,7 @@ input[type="text"], input[type="email"], input[type="password"], input[type="num
 select, textarea {
   width: 100%;
   font: inherit;
-  color: var(--salt);
+  color: var(--chalk);
   padding: .65rem .8rem;
   background: var(--abyss);
   border: 1px solid var(--current);
@@ -108,13 +108,13 @@ legend { padding: 0; margin-bottom: .4rem; }
   display: inline-block;
   font: inherit; font-weight: 500;
   padding: .7rem 1.3rem;
-  background: var(--salt); color: var(--abyss);
-  border: 1px solid var(--salt); border-radius: 8px;
+  background: var(--chalk); color: var(--abyss);
+  border: 1px solid var(--chalk); border-radius: 8px;
   text-decoration: none; cursor: pointer;
 }
 .btn:hover { background: var(--teal); border-color: var(--teal); }
-.btn-quiet { background: transparent; color: var(--salt); border-color: var(--current); }
-.btn-quiet:hover { background: var(--tide); color: var(--salt); border-color: var(--mist); }
+.btn-quiet { background: transparent; color: var(--chalk); border-color: var(--current); }
+.btn-quiet:hover { background: var(--tide); color: var(--chalk); border-color: var(--mist); }
 .btn-block { width: 100%; text-align: center; }
 
 /* selectable option rows (radio / checkbox wrapped in a label) */
@@ -139,10 +139,10 @@ legend { padding: 0; margin-bottom: .4rem; }
 
 .tabs { display: flex; gap: .25rem; margin-bottom: 1rem; border-bottom: 1px solid var(--current); }
 .tab { padding: .6rem 1rem; text-decoration: none; color: var(--mist); border-bottom: 3px solid transparent; margin-bottom: -1px; }
-.tab:hover { color: var(--salt); }
+.tab:hover { color: var(--chalk); }
 /* login tab is active unless another panel is open */
 body:not(:has(#signup:target, #forgot-password:target, #forgot-username:target)) .tab[href="#login"],
-body:has(#signup:target) .tab[href="#signup"] { color: var(--salt); border-bottom-color: var(--teal); font-weight: 500; }
+body:has(#signup:target) .tab[href="#signup"] { color: var(--chalk); border-bottom-color: var(--teal); font-weight: 500; }
 
 .panel { display: none; scroll-margin-top: 14rem; }
 .panel:target { display: block; }
@@ -162,7 +162,7 @@ body:has(#signup:target) .tab[href="#signup"] { color: var(--salt); border-botto
 .challenge-top { display: flex; align-items: center; gap: .6rem; }
 .challenge h3 { margin: 0; }
 .challenge p { margin: 0; color: var(--mist); font-size: .95rem; }
-.challenge .meta { color: var(--salt); font-size: .9rem; margin-top: auto; padding-top: .5rem; }
+.challenge .meta { color: var(--chalk); font-size: .9rem; margin-top: auto; padding-top: .5rem; }
 
 /* ---------- page 4: stats ---------- */
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }

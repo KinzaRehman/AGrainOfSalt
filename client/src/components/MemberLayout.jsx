@@ -33,7 +33,7 @@ export default function MemberLayout() {
         <NavLink to="/challenges">Challenge selection</NavLink>
         <NavLink to="/dashboard">Challenge KPIs</NavLink>
         <NavLink to="/leaderboard">Leaderboard</NavLink>
-        <NavLink to="/inbox">Grains of salt</NavLink>
+        <NavLink to="/inbox">Encouragement</NavLink>
         <button onClick={handleLogout} disabled={pending}>{pending ? 'Logging out…' : 'Log out'}</button>
       </nav>
       {error && <p role="alert">{error}</p>}

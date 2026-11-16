@@ -13,18 +13,18 @@ export default function Landing() {
     <main className="landing">
       <section className="landing-hero" aria-labelledby="landing-title">
         <div>
-          <p className="landing-eyebrow">A Grain of Salt</p>
-          <h1 id="landing-title">A little help <span>sticking to your goals.</span></h1>
-          <p className="landing-intro">Pick a challenge, track your progress, and get a little salt from the community to keep you going. A Grain of Salt gives you a place to check in on the goals you set for yourself.</p>
+          <p className="landing-eyebrow">Locked In</p>
+          <h1 id="landing-title">Lock in. <span>Show up for yourself.</span></h1>
+          <p className="landing-intro">Pick a challenge, track your progress, and get encouragement from the community to keep you going. Sign up for challenges, commit to your goals, and build habits that help you grow.</p>
           <div className="landing-actions">
             <Link className="landing-button" to="/signup">Sign up</Link>
             <a className="landing-text-link" href="#how-it-works">How it works</a>
           </div>
           <p className="landing-returning">Already have an account? <Link to="/login">Log in</Link></p>
         </div>
-        <aside className="landing-note" aria-labelledby="salt-title">
-          <h2 id="salt-title">Why “a grain of salt”?</h2>
-          <p>The “salt” is the community side of the app: messages from other members to help you stay accountable to your challenge.</p>
+        <aside className="landing-note" aria-labelledby="commitment-title">
+          <h2 id="commitment-title">What does it mean to lock in?</h2>
+          <p>Choose a challenge, commit to doing the work, and take it one day at a time. Your community is here to encourage you as you work on yourself.</p>
         </aside>
       </section>
 
@@ -50,7 +50,7 @@ export default function Landing() {
         </div>
         <div className="landing-expectation-details">
           <h3>What we’re building</h3>
-          <p>Challenge selection, progress stats, a community leaderboard, and an inbox for the “grains of salt” that help keep you motivated.</p>
+          <p>Challenge selection, progress stats, a community leaderboard, and an inbox for encouragement that helps keep you motivated.</p>
 
         </div>
       </section>

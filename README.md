@@ -1,16 +1,13 @@
-# A Grain of Salt 🧂
+# Locked In 🔒
 
-A full-stack challenge tracker with real-time updates and community accountability. Pick a challenge, log your progress, and get a little salt from the community to keep you going.
-
-### Image 
-![landing](Wireframing/landing.png)
+A full-stack challenge tracker with real-time updates and community accountability. Pick a challenge, log your progress, and get encouragement from the community to keep you going.
 
 ### Features
 Sign up, log in, and recover your account
 One-time onboarding questionnaire
 Choose a challenge and track your stats
 Leaderboard to see how you rank
-Inbox for the “grains of salt” you receive
+Inbox for encouragement from your community
 
 ### Tech Stack
 MERN
@@ -37,7 +34,7 @@ npm install
 npm run dev
 ```
 
-Configure `server/.env` using `server/.env.example`. MongoDB must be reachable before the API starts. Open the Vite URL (normally http://localhost:5173). The development server proxies `/api` to port 5000; update `client/vite.config.js` if you change the API port.
+Configure `server/.env` using `server/.env.example`. MongoDB must be reachable before the API starts. New databases use `locked-in`; if you already have accounts, keep your existing `MONGO_URI` so the app continues using the same database. Open the Vite URL (normally http://localhost:5173). The development server proxies `/api` to port 5000; update `client/vite.config.js` if you change the API port.
 
 ### Recover your account
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 // Light/dark switch shown in the site header. The choice is saved in the browser,
 // and index.html applies it before React loads so the page never flashes the wrong theme.
-const STORAGE_KEY = 'grain-theme';
+const STORAGE_KEY = 'locked-in-theme';
 
 // Read the theme already applied by index.html so the switch starts in the right position.
 function readTheme() {

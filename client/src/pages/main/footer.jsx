@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         {/* Use the browser year so the copyright does not need a yearly edit. */}
         <div className="site-footer-bottom">
-          <small>© {new Date().getFullYear()} A Grain of Salt.</small>
+          <small>© {new Date().getFullYear()} Locked In.</small>
         </div>
       </div>
     </footer>

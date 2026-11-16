@@ -13,7 +13,7 @@ async function migrate() {
     const changes = accounts.map(account => {
       const email = (account.email || account.local?.email || '').trim().toLowerCase();
       const password = account.password || account.local?.password;
-      const username = account.username || `salt-${account._id.toString()}`;
+      const username = account.username || `member-${account._id.toString()}`;
       if (!email || !password) throw new Error('An account is missing an email or password. No migration applied.');
       if (emails.has(email) || usernames.has(username)) throw new Error('Duplicate accounts require review. No migration applied.');
       emails.add(email);

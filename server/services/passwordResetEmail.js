@@ -16,7 +16,7 @@ exports.sendPasswordReset = async (email, resetUrl) => {
     body: JSON.stringify({
       from: process.env.EMAIL_FROM,
       to: [email],
-      subject: 'Reset your A Grain of Salt password',
+      subject: 'Reset your Locked In password',
       text: `Reset your password using this link: ${resetUrl}\n\nThis link expires in 30 minutes. If you did not request it, you can ignore this email.`
     }),
     signal: AbortSignal.timeout(10000)

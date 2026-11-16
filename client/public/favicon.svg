@@ -1,21 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
-  <title>A Grain of Salt — salt cube and grains</title>
-  <rect width="64" height="64" rx="14" fill="#102d31"/>
-  <g stroke="#102d31" stroke-width="1.5" stroke-linejoin="round">
-    <path d="M31 9 49 19 31 30 13 19Z" fill="#fffaf0"/>
-    <path d="M13 19 31 30 31 50 13 39Z" fill="#d4dfd8"/>
-    <path d="M31 30 49 19 49 39 31 50Z" fill="#a8bfb7"/>
-  </g>
-  <path d="m20 18 11-6 9 5" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-  <g fill="#f5ede0">
-    <path d="m9 46 5-2 3 5-5 3Z"/>
-    <path d="m21 52 4-1 2 4-4 2Z"/>
-    <path d="m43 49 5-2 3 5-5 3Z"/>
-    <path d="m53 39 3-1 2 3-3 2Z"/>
-  </g>
-  <g fill="#e99b89">
-    <path d="m51 9 3-1 2 3-3 2Z"/>
-    <path d="m7 30 3-1 2 3-3 2Z"/>
-    <path d="m34 55 3-1 2 3-3 2Z"/>
-  </g>
+  <title>Locked In — lock and checkmark</title>
+  <rect width="64" height="64" rx="14" fill="#142030"/>
+  <path d="M22 29V21a10 10 0 0 1 20 0v8" stroke="#E9D8C8" stroke-width="5" stroke-linecap="round"/>
+  <rect x="15" y="27" width="34" height="27" rx="6" fill="#FF5C8D"/>
+  <path d="m24 40 6 6 11-12" stroke="#142030" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

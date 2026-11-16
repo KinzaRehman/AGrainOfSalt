@@ -49,7 +49,7 @@ function Signup() {
 
   return (
     <main className="auth">
-      <h1>A Grain of Salt</h1>
+      <h1>Locked In</h1>
       <h2>Create your account</h2>
 
       <form onSubmit={handleSubmit}>
