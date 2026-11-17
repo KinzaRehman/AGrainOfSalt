@@ -23,6 +23,7 @@ export default function Landing() {
           <p className="landing-returning">Already have an account? <Link to="/login">Log in</Link></p>
         </div>
         <aside className="landing-note" aria-labelledby="commitment-title">
+          <img className="landing-focus-mark" src="/favicon.svg" width="192" height="192" alt="A person leaning forward in a blue chair, ready to focus" />
           <h2 id="commitment-title">What does it mean to lock in?</h2>
           <p>Choose a challenge, commit to doing the work, and take it one day at a time. Your community is here to encourage you as you work on yourself.</p>
         </aside>

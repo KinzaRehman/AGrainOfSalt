@@ -38,7 +38,7 @@ function Questionnaire() {
     <main className="questionnaire">
       <h1>5 questions to help you Lock In</h1>
       <p>Take a moment to think about your goals and what you can commit to.</p>
-      <p className="questionnaire-note">Use these questions to reflect. Answers are not saved yet.</p>
+      <p className="questionnaire-note">Use these questions to reflect.</p>
       <ol className="questionnaire-questions">
         {writtenQuestions.slice(0, 2).map((question, index) => (
           <WrittenQuestion skey={question.name} question={question} number={index + 1} />

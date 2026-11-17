@@ -464,3 +464,13 @@ button:disabled {
   color: var(--muted);
   font-size: .9rem;
 }
+
+/* The leaning-in illustration carries the focus motif from the app icon. */
+.landing-focus-mark {
+  display: block;
+  width: 192px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 24px;
+  border-radius: 20px;
+}
