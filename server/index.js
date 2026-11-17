@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const path = require('path');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
@@ -25,6 +26,20 @@ app.get('/api/health', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 
+// In production (Render, single free service), serve the built React
+// client from the same site, so /api and the login cookie stay same-site.
+// The auth cookie is SameSite=Lax, so a split client/server on different
+// domains would not send it on login requests. Build the client first:
+// npm run build --prefix client, then start this server.
+if (process.env.NODE_ENV === 'production') {
+  const clientDist = path.join(__dirname, '..', 'client', 'dist');
+  app.use(express.static(clientDist));
+  app.use((req, res, next) => {
+    if (req.path.startsWith('/api')) return next();
+    res.sendFile(path.join(clientDist, 'index.html'));
+  });
+}
+
 connectDB()
   .then(() => {
     console.log('MongoDB connected');
@@ -37,4 +52,3 @@ connectDB()
     console.error('MongoDB connection failed:', error.message);
     process.exit(1);
   });
-  
