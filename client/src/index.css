@@ -416,3 +416,51 @@ button:disabled {
   .site-header-nav .site-signup { margin-left: auto; }
   .site-header .theme-toggle { gap: 6px; padding-right: 10px; font-size: 12px; }
 }
+
+/* Give the onboarding questions room for thoughtful answers on any screen. */
+.questionnaire {
+  max-width: 640px;
+  margin: 30px auto;
+}
+
+.questionnaire-questions {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0;
+  display: grid;
+  gap: 28px;
+}
+
+.questionnaire-question label {
+  display: block;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.questionnaire-question p {
+  margin: 6px 0 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.questionnaire-question textarea,
+.questionnaire-question select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+}
+
+.questionnaire-question textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.questionnaire-note {
+  color: var(--muted);
+  font-size: .9rem;
+}
