@@ -2,6 +2,10 @@
 
 A full-stack challenge tracker with real-time updates and community accountability. Pick a challenge, log your progress, and get encouragement from the community to keep you going.
 
+🌐 **Live Demo:** https://agrainofsalt.onrender.com
+
+> Note: hosted on free Render, so the first load can take about 50 seconds while it wakes up.
+
 ### Features
 Sign up, log in, and recover your account
 One-time onboarding questionnaire
